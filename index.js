@@ -32,4 +32,54 @@ function runApp () {
             }
         })
     }
+
+    function addIntern() {
+        inquirer.prompt ([
+
+            {
+                type: "input",
+                name: "internName",
+                message: "What is the Intern's Name?"
+            },
+            {
+                type: "input",
+                name: "internId",
+                message: "What is the Intern's ID?"
+            },
+            {
+                type: "input",
+                name: "internEmail",
+                message: "What is the Intern's email?"
+            },
+            {
+                type: "input",
+                name: "internOfficeNumber",
+                message: "What is the Intern's office number?"
+            }
+        ]).then(answers => {
+            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internOfficeNumber);
+            teamArray.push(intern);
+            createTeam(); 
+        });
+    }
+
+    function addManager() {
+        inquirer.prompt ([
+
+            {
+
+            }
+        ])
+
+    }
+
+    function addEngineer() {
+        inquirer ([
+
+            {
+                
+            }
+        ])
+
+    }
 }
